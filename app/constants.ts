@@ -36,6 +36,62 @@ export const chainsToTSender: ContractsConfig = {
   },
 };
 
+
+export const tsenderAbi = [
+  {
+    type: "function",
+    name: "airdropERC20",
+    inputs: [
+      {
+        name: "tokenAddress",
+        type: "address",
+        internalType: "address",
+      },
+      {
+        name: "recipients",
+        type: "address[]",
+        internalType: "address[]",
+      },
+      {
+        name: "amounts",
+        type: "uint256[]",
+        internalType: "uint256[]",
+      },
+      {
+        name: "totalAmount",
+        type: "uint256",
+        internalType: "uint256",
+      },
+    ],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "areListsValid",
+    inputs: [
+      {
+        name: "recipients",
+        type: "address[]",
+        internalType: "address[]",
+      },
+      {
+        name: "amounts",
+        type: "uint256[]",
+        internalType: "uint256[]",
+      },
+    ],
+    outputs: [
+      {
+        name: "",
+        type: "bool",
+        internalType: "bool",
+      },
+    ],
+    stateMutability: "pure",
+  },
+];
+
 export const erc20Abi = [
   {
     anonymous: false,
@@ -787,60 +843,5 @@ export const erc20Abi = [
     outputs: [{ internalType: "string", name: "", type: "string" }],
     stateMutability: "pure",
     type: "function",
-  },
-];
-
-export const tsenderAbi = [
-  {
-    type: "function",
-    name: "airdropERC20",
-    inputs: [
-      {
-        name: "tokenAddress",
-        type: "address",
-        internalType: "address",
-      },
-      {
-        name: "recipients",
-        type: "address[]",
-        internalType: "address[]",
-      },
-      {
-        name: "amounts",
-        type: "uint256[]",
-        internalType: "uint256[]",
-      },
-      {
-        name: "totalAmount",
-        type: "uint256",
-        internalType: "uint256",
-      },
-    ],
-    outputs: [],
-    stateMutability: "nonpayable",
-  },
-  {
-    type: "function",
-    name: "areListsValid",
-    inputs: [
-      {
-        name: "recipients",
-        type: "address[]",
-        internalType: "address[]",
-      },
-      {
-        name: "amounts",
-        type: "uint256[]",
-        internalType: "uint256[]",
-      },
-    ],
-    outputs: [
-      {
-        name: "",
-        type: "bool",
-        internalType: "bool",
-      },
-    ],
-    stateMutability: "pure",
   },
 ];
